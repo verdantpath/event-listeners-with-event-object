@@ -19,12 +19,32 @@ function checkLength(e, minLength) {
   }
 }
 
+// USERNAME FEEDBACK
 // get username input
 var elUsername = document.getElementById('username');
 // if event listener supported
 if (elUsername.addEventListener) {
   // on blur event
   elUsername.addEventListener('blur', function(e) {
+    // call checkLength()
+    checkLength(e, 5);
+    // capture in bubble phase
+  }, false);
+} else {
+  // IE fallback onblur
+  elUsername.attachEvent('onblur', function(e) {
+    // call checkLength()
+    checkLength(e, 5);
+  });
+}
+
+// PASSWORD FEEDBACK
+// get password input
+var elPassword = document.getElementById('password');
+// if event listener supported
+if (elPassword.addEventListener) {
+  // on blur event
+  elPassword.addEventListener('blur', function(e) {
     // call checkLength()
     checkLength(e, 5);
     // capture in bubble phase
