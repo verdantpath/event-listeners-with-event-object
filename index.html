@@ -11,9 +11,11 @@
       <form method="post" action="http://www.example.org/register">
 
         <label for="username">Create a username: </label>
+        <!-- don't have feedback div on own line, or js may return a whitespace node as the next sibling -->
         <input type="text" id="username" /><div id="feedback"></div>
 
         <label for="password">Create a password: </label>
+        <!-- don't have feedback div on own line, or js may return a whitespace node as the next sibling -->
         <input type="password" id="password" /><div id="feedback"></div>
 
         <input type="submit" value="sign up" />
